@@ -130,20 +130,10 @@
                         <h5 class="card-title">${title}</h5>
                         <p class="card-text">${star}</p>
                         <p class="card-text">${comment}</p>
-                        <button class="btn btn-danger delete-btn" data-id="${doc.id}">삭제</button> <!-- 삭제 버튼 추가 -->
                     </div>
                 </div>
             </div>`;
             $('#card').append(temp_html);
-        });
-
-        $(".delete-btn").click(async function () {
-            let docId = $(this).data('id');
-            if (confirm('정말로 삭제하시겠습니까?')) {
-                await deleteDoc(doc(db, "movies", docId));
-                alert('삭제되었습니다.');
-                window.location.reload();
-            }
         });
 
 
